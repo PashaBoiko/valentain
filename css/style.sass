@@ -1,0 +1,913 @@
+@charset "utf-8"
+
+=border-radius($radius: 5px)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+=placeholder-color($color-pl)
+  &:-moz-placeholder,
+  &::-moz-placeholder
+    color: $color-pl
+    opacity: 1
+  &::-webkit-input-placeholder
+    color: $color-pl
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  vertical-align: baseline
+strong, b 
+  font-weight: bold
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section 
+  display: block
+body 
+  line-height: 1
+ol, ul 
+  list-style: none
+blockquote, q 
+  quotes: none
+blockquote:before, blockquote:after,
+q:before, q:after 
+  content: ''
+  content: none
+table 
+  border-collapse: collapse
+  border-spacing: 0
+
+button
+  background: none
+  border: none
+  
+button:focus, input:focus
+  outline: none
+
+a
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+
+
+@font-face 
+  font-family: 'gillsans'
+  src: url('../fonts/gillsans.ttf')
+
+@font-face
+  font-family: '__Garamond Swash_5'
+  src: url('../fonts/garamondswash-italic.eot')
+  src: local('☺'), url('../fonts/garamondswash-italic.woff') format('woff'), url('../fonts/garamondswash-italic.svg') format('svg')
+  font-weight: 300
+  font-style: italic
+
+.nav > li > a:hover, .nav > li > a:focus 
+  text-decoration: none !important
+  background-color: transparent !important
+
+h2 
+  text-align: center
+  span
+    font: 30px 'gillsans', sans-serif
+    color: #dcaf78
+    text-transform: uppercase
+    position: relative
+    display: inline-block
+    &:before
+      background: #dcaf78
+      content: " "
+      display: block
+      height: 2px
+      width: 100%
+      position: absolute
+      bottom: -10px
+
+h3
+  text-align: center
+  span
+    font: 16px 'gillsans', sans-serif
+    color: #dcaf78
+    text-transform: uppercase
+    position: relative
+    display: inline-block
+    &:before
+      background: #dcaf78
+      content: " "
+      display: block
+      height: 2px
+      width: 100%
+      position: absolute
+      bottom: -10px
+
+
+
+#wrapper 
+  width: 100%
+  position: relative
+  margin: 0 auto
+  overflow: hidden
+
+
+.link-title
+  display: block
+//header
+
+.header-menu
+  background: #18130d
+
+nav.navbar 
+  margin-bottom: 13px
+
+.navbar-toggle 
+  background-color: #000
+
+.navbar-toggle .icon-bar
+  background: #fff
+
+.navbar-collapse
+  border-top: none
+  box-shadow: none
+
+ul.main-menu
+  margin-left: 23px
+  padding-top: 19px
+  li 
+    padding: 0 15px
+    a
+      font: 13px 'gillsans', sans-serif
+      color: #caa16e
+      text-transform: uppercase
+      position: relative
+      display: block
+      padding: 15px 0 15px
+      &:hover
+        background: transparent
+        transition: color 0.3s ease-in-out
+      &:after
+        content: " "
+        display: block
+        width: 100%
+        height: 1px
+        background-color: #caa16e
+        position: absolute
+        top: 120%
+        left: 0
+        right: 0
+        opacity: 0
+        transform: translateY(0px)
+        transition-property: opacity, transform
+        transition-duration: 0.1s 
+      &:hover:after
+        opacity: 1
+        transform: translateY(-18px)
+        transition-property: opacity, transform
+        transition-duration: 0.3s
+
+ul.main-menu-2
+  margin-left: 104px
+  li:not(:last-child)
+    padding-right: 23px
+
+.gold-block
+  height: 11px 
+  width: 100%
+  background: #dcaf78
+
+.gold-block-big
+  height: 23px
+
+.block-menu
+  padding-top: 47px
+  padding-bottom: 30px
+
+.second-menu 
+  li
+    float: left
+    padding-right: 142px
+    display: block
+    a 
+      font: 16px 'gillsans', sans-serif
+      color: #caa16e
+      text-transform: uppercase
+      position: relative
+      display: inline-block
+      &:before
+        position: absolute
+        content: " "
+        display: block
+        height: 1px
+        width: 100%
+        background: #caa16e
+        top: 117%
+      &:after
+        content: " "
+        display: block
+        position: absolute
+
+  .menu-block1 
+    padding-left: 36px
+    a:after
+      background: url(../img/icon1.png) no-repeat
+      width: 46px
+      height: 34px
+      top: -6px
+      right: -64px
+
+  .menu-block2 a:after
+    background: url('../img/icon2.png') no-repeat
+    width: 45px
+    height: 45px
+    right: -59px
+    top: -13px
+
+  .menu-block3 a:after
+    background: url(../img/icon3.png) no-repeat
+    width: 46px
+    height: 46px
+    top: -15px
+    right: -64px
+
+  .menu-block4 
+    padding-right: 115px
+    a:after
+      background: url('../img/icon4.png') no-repeat
+      width: 40px
+      height: 40px 
+      top: -10px
+      right: -64px
+
+
+ul.price-list-drop
+  border: 1px solid #f58500
+  padding: 5px
+  background-color: #f58500
+  border-radius: 5px
+  width: 177px
+  form 
+    input
+      width: 100%
+      margin-bottom: 5px
+      height: 24px
+      border-radius: 5px
+      padding-left: 5px
+
+    button
+      width: 100%
+      height: 26px
+      background-color: #ebebeb
+
+
+.header
+  min-height: 575px
+  background: url('../img/header-bg.jpg') no-repeat
+  background-size: cover 
+  .header-block
+    width: 471px
+    img
+      margin-left: 44px
+      margin-top: 101px
+
+    .header-text
+      font: bold 40px/44px '__Garamond Swash_5', sans-serif
+      color: #dcaf78
+      display: block
+      text-align: center
+      margin-top: 24px
+
+.production-title
+  margin-top: 60px
+  margin-bottom: 80px
+
+.products
+  position: relative
+  div
+    div
+      height: 288px
+      
+      .products-inline-block
+        position: relative
+        width: 262px
+        height: 100%
+        background: rgba(255,255,255,0.5)
+        padding-left: 45px
+        padding-top: 79px
+        overflow: hidden
+        ul li 
+          font: 25px 'gillsans', sans-serif
+          color: #1c1c1c
+          text-transform: uppercase
+
+        a
+          font: 16px 'gillsans', sans-serif
+          color: #1c1c1c
+          text-transform: uppercase
+          position: absolute
+          bottom: 63px
+          padding-bottom: 10px
+          transition: left 0.2s ease-in-out
+          &:hover
+            text-decoration: underline
+
+
+    .products-block-1
+      background: url('../img/products-block-1.png') no-repeat
+      background-size: cover
+
+    .products-block-2
+      background: url('../img/products-block-2.png') no-repeat
+      background-size: cover  
+
+    .products-block-3
+      background: url('../img/products-block-3.png') no-repeat
+      background-size: cover
+
+    .products-block-4
+      background: url('../img/products-block-4.png') no-repeat
+      background-size: cover
+      .products-inline-block
+        padding-top: 109px
+
+    .products-block-5
+      background: url('../img/products-block-5.png') no-repeat
+      background-size: cover
+      .products-inline-block 
+        padding-top: 100px
+        a 
+          bottom: 109px
+        
+
+    .products-block-6
+      background: url('../img/products-block-6.png') no-repeat
+      background-size: cover
+      .products-inline-block 
+        padding-top: 100px
+        a 
+          bottom: 109px
+
+.food
+  padding-top: 100px
+  padding-bottom: 54px
+  position: relative
+  .link-title
+    margin-bottom: 20px
+  .type-food
+    width: 25%
+    float: left
+    height: 247px
+    position: relative
+    display: block
+    text-align: center
+    span 
+      line-height: 122px
+      img 
+        display: inline-block
+        margin: 0 auto
+        vertical-align: middle
+    div 
+      position: absolute
+      bottom: 10px
+      width: 100%
+      text-align: center
+      height: 40px
+      padding: 0 26px
+      a 
+        font: 16px/22px 'gillsans', sans-serif
+        color: #1c1c1c
+        text-transform: uppercase
+
+  .type-food-frist-line
+    margin-bottom: 140px
+
+.food-line
+  height: 21px
+
+.advantages-line-m
+  margin-top: -3px
+
+.advantages
+  padding-top: 83px
+  position: relative
+  .advantages-list 
+    list-style-type: disc
+    margin-top: 79px
+    li
+      font: 26px/44px 'gillsans', sans-serif
+  
+  .advantages-list-1
+    margin-left: 45px
+
+  .advantages-list-2
+    margin-left: 10px
+
+  .advantages-block
+    margin-top: 72px
+    div img
+      width: 100%
+      height: auto
+
+.cold-food
+  position: relative
+  h2 
+    padding-top: 113px
+  
+  div 
+    margin-top: 64px
+    p 
+      font: 31px 'gillsns', sans-serif
+      color: #1c1c1c
+      margin-bottom: 9px 
+      text-align: center   
+
+  .cold-foot-img
+    margin-top: 10px
+    div img
+      width: 100%
+      height: auto
+
+
+.proposal
+  min-height: 531px
+  position: relative
+  padding-top: 116px
+  background: url('../img/proposal-bg-1.png') no-repeat left 45px, url('../img/proposal-bg-2.png') no-repeat right 45px
+  h2
+    margin-bottom: 63px
+
+  div 
+    text-align: center
+    p 
+      font: 31px 'gillsans', sans-serif
+      color: #1c1c1c
+      margin-bottom: 9px 
+      text-align: center  
+
+button.site-button
+  font: 16px 'gillsans', sans-serif
+  color: #dcaf78
+  background: #000000
+  padding: 20px 58px
+  display: inline-block
+  margin-top: 69px
+  text-transform: uppercase
+
+.proposal-block-img
+  margin-top: 98px
+  div 
+    img 
+      width: 100%
+      height: auto
+
+
+.news 
+  padding-top: 40px
+  position: relative
+  h3
+    margin-bottom: 44px
+  
+  .news-block-img
+    div img 
+      width: 100%
+      height: auto
+
+  .news-block-text 
+    div
+      text-align: center
+      margin-top: 40px
+      span
+        font: 16px 'gillsans', sans-serif
+        color: #1c1c1c
+        text-transform: uppercase
+
+.history
+  padding-top: 55px
+  position: relative
+  h3
+    margin-bottom: 40px
+
+  .history-text-block
+    margin-bottom: 28px
+    p
+      font: 20px 'gillsans', sans-serif
+      color: #1c1c1c
+      margin-bottom: 3px 
+      text-align: center 
+
+  .history-block-img
+    div img 
+      width: 100%
+      height: auto
+
+.block-width-valentine-link 
+  position: relative
+  .valentine-link
+    position: absolute
+    top: 29%
+    left: 76%
+
+
+.parthners
+  padding-top: 35px
+  position: relative
+  background: #f3f3f1
+  h3
+    margin-bottom: 66px
+  
+  .parthner-block 
+    width: 50%
+    text-align: right
+    position: relative
+    float: right
+    div
+      text-align: center
+      h4
+        font: 25px 'gillsans', sans-serif
+        color: #1c1c1c
+        text-transform: uppercase
+        padding-top: 45px
+        padding-bottom: 56px  
+        text-align: center
+
+      img 
+        display: inline
+        
+
+.connection-line
+  background: #f3f3f1
+  height: 40px
+
+
+.conection
+  padding-top: 17px
+  padding-bottom: 82px
+  text-align: center
+  position: relative
+  background: url('../img/keks.png') no-repeat 95% 60%
+  .h-connection
+    font: 25px 'gillsans', sans-serif
+    color: #000000
+    text-transform: uppercase
+  
+  .connection-button
+    margin-top: 47px
+    font-size: 14px
+    padding-left: 12px
+    padding-right: 12px
+
+
+.footer 
+  background: #19140f
+  padding-top: 30px
+  padding-bottom: 27px
+  div.container
+    position: relative
+    .contact
+      a.contact-site-name
+        font: 13px 'gillsans', sans-serif
+        color: #eae9e9
+        text-transform: uppercase
+        margin-bottom: 17px
+        display: block
+
+
+      ul
+        li 
+          font: 16px 'gillsans', sans-serif
+          color: #7a7a7b
+          span
+            margin-right: 27px
+
+        li.footer-li-last
+          margin-top: 19px   
+    .link
+      position: relative
+      height: 119px
+      ul 
+        position: absolute
+        width: 100%
+        bottom: 0
+        li
+          float: left
+          display: inline-block
+          margin-right: 7px
+    
+    .footer-form-block
+      .form-title
+        color: #a08058
+        font: 16px 'gillsans', sans-serif
+        text-transform: uppercase
+        margin-bottom: 15px 
+
+      .form-text
+        color: #a08058
+        font: 16px 'gillsans', sans-serif
+        margin-bottom: 18px
+      
+      .footer-form
+        input 
+          width: 287px
+          height: 38px
+          border: 1px solid #a08058
+          padding-left: 13px
+          background: #19140f
+        
+        input[type="email"]::-webkit-input-placeholder  
+          color: #7c6344
+
+        input[type="email"]::-moz-placeholder  
+          color: #7c6344
+
+
+        button
+          font: 16px 'gillsans', sans-serif
+          color: #daae77
+          padding: 10px 18px
+          background: #4a3b29
+          margin-left: 18px
+
+    .footer-link-to-valentine
+      font: 13px 'gillsans', sans-serif
+      color: #fff 
+      text-transform: uppercase
+      position: absolute
+      right: 0
+      top: 0
+
+.fixed-buttons-left
+  left: 0
+
+.fixed-buttons-right
+  right: 0
+
+.fixed-buttons
+  position: absolute
+  margin-top: -144px
+  top: 50%
+  .fixed-buttons-menu
+    li 
+      height: 48px
+      width: 46px
+      margin-bottom: 5px
+      a
+        display: block
+        width: 100%
+        height: 100%
+        color: #ffffff
+    li:first-child
+      background: #383838 url('../img/link-to-top.png') no-repeat center center
+    li:nth-child(2)
+      background: #383838
+      padding: 17px 9px 
+      span
+        color: #fff
+    li:last-child
+      background: #383838 url('../img/link-to-bottom.png') no-repeat center center
+  
+@media(max-width: 1300px)
+  .people
+    width: 100%
+    height: auto
+
+  .parthners .parthner-block div img
+    width: 100%
+    height: auto
+    
+  
+
+@media (max-width: 1200px)
+  ul.main-menu-2 
+    margin-left: 0
+    margin: 0 auto 
+    display: block
+    width: 100%
+    text-align: center
+    li 
+      display: inline-block
+      a
+        display: inline-block
+
+  .second-menu .menu-block1
+    padding-left: 0px
+
+  .second-menu .menu-block4
+    padding-right: 0px
+    li 
+      text-align: right
+      width: 40%
+
+  ul.second-menu li 
+    width: 20%
+    padding: 0
+  
+  .food .type-food
+    width: 25%
+    
+
+@media (max-width: 992px)
+  .navbar-header
+    width: 100%
+    text-align: center
+    a 
+      display: block
+      text-align: center
+      width: 100%
+      img 
+        margin: 0 auto
+
+  ul.main-menu-2 
+    margin-left: 0
+    margin: 0 auto 
+    display: block
+    width: 100%
+    text-align: center
+    li 
+      display: inline-block
+      width: 50%
+  
+  ul.second-menu li 
+    width: 22%
+    padding: 0
+    a 
+      font-size: 13px
+  
+  .second-menu .menu-block4 
+    width: 34%
+    padding-left: 71px
+
+  .second-menua li a:after
+    right: -10px !important
+  
+  .food .type-food
+    width: 33%
+    margin-bottom: 95px
+  
+  .advantages .advantages-list li
+    font-size: 23px  
+
+  .advantages .advantages-list-1
+    margin-left: 0px
+
+  .people
+    width: 70%
+    margin: 0 auto
+    display: block
+  
+  .parthners .parthner-block
+    width: 100%
+    float: none 
+    div
+      width: 100%
+      img 
+        width: 70%
+        margin: 0 auto
+        display: block
+  
+
+@media (max-width: 768px)
+  .navbar-header
+    width: 100%
+    text-align: center
+    a 
+      display: block
+      text-align: center
+      width: 120px
+      img 
+        margin: 0 10px
+  
+  ul.main-menu-2 li:not(:last-child) 
+    padding-right: 0px
+
+  ul.main-menu
+    margin-left: 0px
+    padding-top: 19px 
+    li  
+      padding: 0px
+      width: 100% !important
+      text-align: center
+      a 
+        display: inline-block !important
+
+  ul.second-menu li
+    width: 50%
+    text-align: center
+    margin-bottom: 66px 
+    a 
+      display: inline-block
+
+  .second-menu .menu-block4 
+    width: 50%
+    padding-left: 0px
+  
+  .second-menu .menu-block1 a:after
+    top: 27px
+    right: 19px
+  
+  .second-menu .menu-block2 a:after
+    right: 18px
+    top: 22px
+  
+  .second-menu .menu-block3 a:after
+    top: 24px
+    right: 51px
+
+  .second-menu .menu-block4 a:after
+    top: 29px
+    right: 54px
+
+  .header .header-block
+    width: 100%
+    img 
+      margin: 0 auto
+      display: block
+  
+  .food .type-food
+    width: 50%
+    margin-bottom: 50px
+
+  
+  .advantages .advantages-list
+    margin-left: 80px
+  
+  h2 span
+    font-size: 25px
+
+  .cold-food div p
+    font-size: 25px
+
+  .proposal
+    background: none
+  
+  .proposal div p
+    font-size: 25px
+  
+  .footer div.container .contact a.contact-site-name
+    text-align: center
+
+  .footer div.container .contact ul li
+    text-align: center
+    margin-bottom: 15px
+
+  .footer div.container .contact ul li.footer-li-last
+    margin-top: 0px
+  
+  .footer div.container .link ul 
+    text-align: center
+    li
+      margin: 0px
+      width: 33%
+
+  .footer div.container .footer-form-block .form-title
+    display: block
+    text-align: center
+  
+  .footer div.container .footer-form-block .form-text
+    text-align: center
+
+  .footer div.container .footer-form-block .footer-form input
+    width: 50%
+    margin: 0 auto
+    display: block
+  .footer div.container .footer-form-block .footer-form button
+    width: 50%
+    margin: 0 auto
+    display: block
+
+  .footer div.container .footer-link-to-valentine
+    right: 39%
+    bottom: -22px
+    top: auto
+
+
+@media (max-width: 480px)
+  ul.second-menu li 
+    width: 100%
+
+  .second-menu .menu-block4 
+    width: 100%
+
+  .food .type-food
+    width: 100%
+    margin-bottom: 30px
+
+  .advantages .advantages-list
+    margin-left: 30px
+
+  .header .header-block img
+    width: 100%
+    height: auto
